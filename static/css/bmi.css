@@ -1,0 +1,747 @@
+.bmi-body {
+  background-image: url('https://source.unsplash.com/1600x1000/?gym');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #000;
+  opacity: 90%;
+}
+
+
+/* #bmi-weight-unit{
+  font-size: 0.6 rem;
+} */
+
+
+
+
+.from-control-bmi {
+  padding: 0px, 0px;
+  /* margin: 10px; */
+  font-size: 1.5rem;
+  border: 1.5px solid rgb(177, 13, 13);
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.bmi-p {
+  color: #000;
+  padding-top: 20px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#get_meal {
+  margin-top: 30px;
+  zoom: 90%;
+  padding-left:50px;
+  padding-right:50px;
+}
+
+input.from-control-bmi {
+  text-align: center;
+}
+
+/* 
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* .videoWrapper {
+  width: 100%;
+  zoom: 0%;
+} */
+
+.from-control1-bmi {
+
+  /* margin: 80px; */
+  font-size: 1.3rem;
+  color: rgb(255, 253, 253);
+  text-shadow: 1.5px 1.5px black;
+
+}
+
+.td-bmi {
+  padding: 10px;
+}
+
+.unit-area-bmi {
+  padding: 15px;
+}
+
+/* .extra-bmi{
+ background-image: linear-gradient(rgb(200, 255, 0),rgb(131, 2, 73));
+} */
+
+.content-bmi {
+  padding: 20px;
+}
+
+.system-style-bmi {
+  background-image: conic-gradient(#d60a92, #f3dc0d);
+  padding-right: 10px;
+  padding-left: 10px;
+  color:black;
+}
+
+.bmi-results-div{
+  background-color: rgb(255, 255, 255); 
+  padding: 3px; 
+  width:350px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1.5px solid red;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+input.button-bmi {
+  font-size: 1.5rem;
+  background: rgb(4, 88, 184);
+  color: white;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 4px 40px;
+}
+
+
+
+.caption-bmi {
+  background-color: #ece10f;
+  background-image: linear-gradient(#eee201, #ff0b50);
+  background-image: conic-gradient(#eee76c, #fc0b4f);
+  color: rgb(0, 0, 0);
+}
+
+
+.button-bmi {
+  font-size: 1.5rem;
+  background: black;
+  color: white;
+  border: 1px solid black;
+  /* margin: 10px; */
+  padding: 4px 40px;
+  border-radius: 10px;
+}
+
+.button-bmi:hover {
+  background-color: #0d6d10;
+  color: white;
+}
+
+
+.container-bmi {
+  background-color: rgba(255, 255, 255, 0.12);
+  /* backdrop-filter: blur(3px); */
+ padding-top: 30px;
+ padding-bottom: 20px;
+  width: 35%;
+  align-items: center;
+  display: wrap;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  border-radius: 10px;
+}
+
+
+
+.kkl-bmi {
+  font-family: 'Roboto Slab';
+  font-size: 1.5rem;
+  font-weight: 600;
+
+}
+
+
+.from-group-bmi {
+  padding: 15px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1.5px 1.5px black;
+}
+
+.from-group-bmi-system {
+  padding: 25px;
+  color: rgb(0, 0, 0);
+
+}
+
+.container-food {
+  width: 90%;
+}
+
+@media (max-width:1200px) {
+  .bmi-body {
+    display: flex;
+    flex-direction: column;
+    zoom: 80%;
+  }
+
+  .unit-area-bmi {
+    padding: 20px;
+  }
+}
+
+
+@media (max-width:970px) {
+  .bmi-body {
+    display: flex;
+    flex-direction: column;
+    zoom: 70%;
+  }
+
+  .unit-area-bmi {
+    padding: 20px;
+  }
+}
+
+@media (max-width:870px) {
+  .bmi-body {
+    display: flex;
+    flex-direction: column;
+    zoom: 60%;
+  }
+
+  .unit-area-bmi {
+    padding: 20px;
+  }
+}
+
+
+@media (max-width:805px) {
+  .container-bmi {
+    zoom: 86%;
+  }
+}
+
+
+@media (max-width:790px) {
+  .container-bmi {
+    zoom: 95%;
+  }
+}
+
+
+@media (max-width:680px) {
+  .container-bmi {
+    width: 60%;
+    zoom: 100%;
+  }
+
+  .body-bmi {
+    zoom: 100%;
+  }
+
+  .from-control-bmi {
+    padding: 10px;
+    margin-bottom: 25px;
+
+  }
+
+
+}
+
+
+@media (max-width:580px) {
+  .responsive-bmi {
+    zoom: 60%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .floating-btn-bmi {
+    display: none;
+  }
+}
+
+
+
+
+@media (max-width:480px) {
+  .bmi-body {
+    display: flex;
+    zoom: 70%;
+  }
+
+  .unit-area-bmi {
+    padding: 20px;
+  }
+
+  .container-bmi {
+    width: 80%;
+    zoom: 90%;
+  }
+
+  .floating-btn-bmi {
+    display: none;
+  }
+}
+
+
+
+
+
+@media (max-width:390px) {
+  .bmi-results-div{
+    zoom: 80%;
+  }
+
+  .container-bmi {
+    width: 80%;
+    zoom: 70%;
+  }
+
+  .floating-btn-bmi {
+    display: none;
+  }
+
+}
+
+
+
+/* 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ navbar //////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\api///////////////////////////////////////////////////// */
+
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.alpha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  background-color: rgb(184, 104, 0);
+}
+
+/* .Feeling-hungry{
+  margin-top: 50px;
+} */
+
+.footer-hover {
+  color: azure;
+  text-decoration: none;
+}
+
+.footer-hover:hover {
+  color: #000000;
+
+}
+
+.food-img {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.footer-hover {
+  color: azure;
+  text-decoration: none;
+}
+
+.footer-hover:hover {
+  color: #000000;
+
+}
+
+.columns{
+margin-left: 12px;
+}
+.meal {
+  margin: 20px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* .videoWrapper {
+  align-content: center;
+  align-items: center;
+
+} */
+
+
+.button-primary {
+
+  font-size: 1.5rem;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 4px 40px;
+  border-radius: 10px;
+}
+
+
+.button-primary:hover {
+  background-color: #af0f0f;
+  color: white;
+}
+
+
+.floating-btn {
+  border-radius: 26.5px;
+  background-color: #001F61;
+  border: 1px solid #001F61;
+  box-shadow: 0 16px 22px -17px #03153B;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Muli';
+  font-size: 16px;
+  line-height: 20px;
+  height: auto;
+  padding: 12px 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  text-transform: none;
+}
+
+button.floating-btn:focus {
+  color: white;
+  outline: none;
+}
+
+button.floating-btn:hover {
+  background-color: #ffffff;
+  color: #001F61;
+}
+
+.floating-text {
+  background-color: #001F61;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-family: 'Muli';
+  padding: 7px 15px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.floating-text a {
+  color: #FF7500;
+  text-decoration: none;
+}
+
+.p {
+  margin-left: 35px;
+  padding: 8px;
+}
+
+li {
+  padding: 5px;
+}
+
+.left {
+  padding: 8px;
+  margin: 5px;
+}
+
+@media screen and (max-width: 480px) {
+
+  /* .social-panel-container.visible {
+    transform: translateX(0px);
+  } */
+
+  .floating-btn {
+    /* right: 20px;
+    width: 100%; */
+    padding: 10px;
+    margin: 10px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+
+  }
+}
+
+
+
+
+
+@media(max-width:1200px) {
+  .videoWrapper {
+    zoom: 80%;
+  }
+}
+
+
+
+@media(max-width:1000px) {
+  .videoWrapper {
+    zoom: 70%;
+  }
+}
+
+
+
+@media(max-width:890px) {
+  .videoWrapper {
+    zoom: 60%;
+  }
+}
+
+
+
+@media(max-width:760px) {
+  .videoWrapper {
+    zoom: 50%;
+  }
+
+  .food-img {
+    width: 80%;
+  }
+}
+
+
+@media(max-width:620px) {
+  .videoWrapper {
+    zoom: 40%;
+    height: 90%;
+  }
+
+  .food-img {
+    width: 70%;
+  }
+}
+
+
+
+@media(max-width:495px) {
+
+
+  .videoWrapper {
+    zoom: 40%;
+    height: 90%;
+    width: 80%;
+  }
+
+  .food-img {
+    width: 80%;
+  }
+#get_meal{
+  zoom: 80%;
+}
+.alpha{
+  width:100%
+}
+}
+
+@media (max-width:475px)
+{
+  .videoWrapper{
+    zoom: 30%;
+    margin-left: 30px;
+  }
+}
+
+@media(max-width:365px) {
+ 
+
+  .food-img {
+    width: 70%;
+  }
+  .alpha{
+    width: 100%;
+  }
+
+.youtube-bmi{
+  width: 1200px;
+  margin-left: 20px;
+}
+}
+
+@media(max-width:306px) {
+  .videoWrapper {
+    zoom: 25%;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+.content {
+  padding-left: 30px;
+  padding-top: 10px;
+
+
+}
+
+.content-bmi {
+
+  background-color: #eee76c;
+
+}
+
+
+
+@media(max-width:762px) {
+  .responsive {
+    width: 80%;
+    height: 60%;
+  }
+
+}
+
+
+
+.data-padding {
+  padding: 50px;
+}
+
+/* 
+tr{
+  padding: 15px;
+  align-self: center;
+
+} */
+
+/* td{
+  padding: 20px;
+  align-items: center;
+}  */
+
+/* th{
+  padding: 30px;
+ 
+
+}  */
+
+.data-padding {
+  background-color: #ffffff;
+
+}
+
+.footer-image:hover {
+  opacity: 0.6;
+}
+
+/* .extra{
+
+  background-color: #d60a92;
+  height:auto;
+ 
+} */
+
+
+
+
+
+
+.centerMe {
+
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.yoga {
+
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: url(https://thumbs.dreamstime.com/b/bmi-body-mass-index-dial-chart-clipart-image-isolated-white-background-bmi-body-mass-index-dial-chart-136770137.jpg) 50% 50% no-repeat;
+  background-size: contain;
+  float: right;
+  /* max-width: 30vw;
+  max-height:105vw; */
+  width: 620px;
+  height: 200px;
+  -webkit-animation: 3s floating infinite ease-in-out;
+  animation: 3s floating infinite ease-in-out;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  65% {
+    -webkit-transform: translate(-50%, -54%);
+    transform: translate(-50%, -54%);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes floating {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  65% {
+    -webkit-transform: translate(-50%, -54%);
+    transform: translate(-50%, -54%);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

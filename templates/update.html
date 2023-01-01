@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block title %} Update Food Logs {% endblock title %}
+{% block body %}
+
+<body class="update-body">
+
+  <div class="container my-3">
+    <h2 class="update-heading">Update Food Logs</h2>
+    <hr><br>
+    <form action="/update/{{data.sno}}" method="POST" class="update-form">
+      <div class="mb-3">
+        <label for="title" class="form-label">Food Name</label>
+        <input type="text" class="form-control" name="food" id="title" value="{{data.food}}"
+          aria-describedby="emailHelp" min="1" max="999">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Proteins</label>
+        <input type="text" class="form-control" name="protein" id="desc" value="{{data.protein}}" min="1" max="999">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Fats</label>
+        <input type="text" class="form-control" name="fat" id="desc" value="{{data.fat}}" min="1" max="999">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Carbs</label>
+        <input type="text" class="form-control" name="carbs" id="desc" value="{{data.carbs}}" min="1" max="999">
+      </div><br>
+      <div class="d-grid" >
+        <input type="submit" class="btn btn-success" value="UPDATE">
+      </div>
+    </form>
+  </div><br><br>
+</body>
+{% endblock body %}

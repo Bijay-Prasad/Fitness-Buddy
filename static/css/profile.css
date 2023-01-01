@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400;1,600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-body{
+    background-color: rgb(137, 188, 34);
+}
+.profile-heading{
+    text-align: center;
+    margin-top: 1.5em;
+}
+.profile-form{
+    padding: 0em 20em 0em;
+}
+
+@media (max-width:1200px) {
+    .profile-form{
+        padding: 0em 15em 0em;
+    }
+}
+
+@media (max-width:991px) {
+    .profile-form{
+        padding: 0em 10em 0em;
+    }
+}
+
+@media (max-width:767px) {
+    .profile-form{
+        padding: 0em 5em 0em;
+    }
+}
+
+@media (max-width:576px) {
+    .profile-form{
+        padding: 0em 3em 0em;
+    }
+    .profile-body{
+        zoom: 80%;
+    }
+}
+
+@media (max-width:400px) {
+    .profile-form{
+        padding: 0em 0em 0em;
+    } 
+    .profile-body{
+        zoom: 70%;
+    }
+}
+
+@media (max-width:300px) { 
+    .profile-body{
+        zoom:45%;
+    }
+}
+
+@media (max-width:200px) { 
+    .profile-body{
+        zoom: 40%;
+    }
+}
+
+@media (max-width:150px) { 
+    .profile-body{
+        zoom: 30%;
+    }
+}
+
+@media (max-width:115px) { 
+    .profile-body{
+        zoom: 20%;
+    }
+}
+
+@media (max-width:87px) { 
+    .profile-body{
+        zoom: 12%;
+    }
+}

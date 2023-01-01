@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+{% block title %} About Us {% endblock title %}
+{% block body %}
+
+<body class="about-body">
+  <div class="about-section">
+    <h1>About Us Page</h1>
+    <p> <b>Fitness Buddy - </b> It is a WEB APP which can help you to maintain your body Fit like your Buddy. It Can Be
+      Help You to Learn About Your Dietary Needs And Lead You To A Better Lifestyle.</p>
+    <p>Who made this WEB APP are listed below : </p>
+
+  </div>
+
+  <div class="final-about">
+
+    <div class="container-A">
+      <div class="circles"></div>
+      <div class="details-container">
+        <div class="avatar">
+          <img src="{{ url_for('static', filename='asset/bijay.jpg') }}" class="img-fluid" alt="Profile Pic">
+        </div>
+        <div class="about">
+          <div class="name">
+            <p style="padding-bottom:10px">
+              Hello There!
+            </p>
+            <h1 class="about-h1" style="padding-bottom:10px">
+              I'm Bijay Prasad.
+            </h1>
+          </div>
+          <div class="about-content">
+            <p class="main-about">
+              I'm a student of Techno International NewTown (Techno India College of Technology) with major in Electronics & Communication engineering from Kolkata (India).
+              I'm passionate about pursuing my major in information technology & computer science.
+              <br>
+              My hobbies are reading biographies, playing football, learning new technologies, coding & programming.
+            </p>
+            <br>
+            <a class="about-button" href="{{ url_for('static', filename='asset/BIJAY PRASAD_Software Engineer_Resume_2022.pdf') }}" download="BIJAY PRASAD_SOFTWARE ENGINEER_RESUME_2022.pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download"
+                viewBox="0 0 16 16">
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                <path
+                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+              </svg>
+              Download Resume</a>
+            <a href="https://bijay-prasad.github.io/Portfolio/" style="background-color: #dbd000;" class="about-button portfolio-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill"
+                viewBox="0 0 16 16">
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+              </svg>
+              View Portfolio</a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+    </div>
+
+
+
+
+    <br>
+    <br>
+
+
+    <br>
+    <div class="container-A">
+      <div class="circles"></div>
+      <div class="details-container">
+        <div class="avatar">
+          <img src="{{ url_for('static', filename='asset/samprit.jpg') }}" class="img-fluid" alt="Profile Pic">
+        </div>
+        <div class="about">
+          <div class="name">
+            <p style="padding-bottom:10px">
+              Hello There!
+            </p>
+            <h1 class="about-h1" style="padding-bottom:10px">
+              I'm Samprit Ghosh.
+            </h1>
+          </div>
+          <div class="about-content">
+            <p class="main-about">
+              I'm persuing my B.Tech in Electronics & Communication Engineering from
+              techno international NewTown (Techno India College of technology), under Maulana Abul Kalam Azad University of Technology (MAKAUT), Kolkata (india).
+              <br>
+              My hobbies are gardening,playing cricket.
+            </p>
+            <br> <a class="about-button"  href="{{ url_for('static', filename='asset/samprit_ghosh_cv.pdf') }}" download="SAMPRIT GHOSH_CV_2022.pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download"
+                viewBox="0 0 16 16">
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                <path
+                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+              </svg>
+              Download Resume</a>
+            <a style="background-color: #dbd000;" class="about-button portfolio-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill"
+                viewBox="0 0 16 16">
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+              </svg>
+              View Portfolio</a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <br><br><br><br>
+
+</body>
+{% endblock body %}

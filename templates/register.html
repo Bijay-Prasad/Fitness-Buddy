@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Buddy | Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/register.css')}}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='asset/gym3.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSubmit").click(function () {
+                var password = $("#password").val();
+                var confirmPassword = $("#txtConfirmPassword").val();
+                if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
+
+
+</head>
+
+<body class="reg-body" id="pic">
+
+    <div class="pre-form-reg reg-margin">
+
+        <div class="outer-form log-shadow">
+
+
+            <form class="reg-form" autocapitalize="none" autocomplete="off" method="POST"
+                action="/register">
+
+
+                <h2 class="registration">Registration Page</h2>
+                <hr style="background-color: black;">
+
+
+
+                <div class="alert" style="font-family: sans-serif; font-size: 20px; color: {{category}};">
+
+                <div class="form-group-reg">
+                    <label class="reg-lebel">Name</label>
+                    <div class="input-icons">
+                        <i class="bi bi-person icon"></i> <input type="text" class="form-control-reg" name="name"
+                            spellcheck="true" required placeholder="Enter your full name" autocomplete="off">
+                    </div>
+                </div>
+
+
+                <div class="form-group-reg">
+                    <label class="reg-lebel">Email</label>
+                    <div class="input-icons">
+                        <i class="bi-envelope-fill icon"></i> <input type="email" class="form-control-reg" name="mail"
+                            required maxlength="30" autocomplete="none" autofocus="off" placeholder="Enter your Email">
+                    </div>
+                </div>
+                <div class="form-group-reg">
+                    <label class="reg-lebel">Username</label>
+                    <div class="input-icons">
+                        <i class="bi-person-circle icon"></i> <input type="text" class="form-control-reg"
+                            name="username" required maxlength="30" autocomplete="off"
+                            placeholder="Create your username">
+                    </div>
+                </div>
+
+                <div class="password">
+
+                    <label class="reg-lebel">Password</label>
+                    <div class="input-icons">
+                        <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+                        <i class="bi bi-key icon-pass"></i>
+                        <input type="password" class="form-control-reg" name="password" maxlength="30"
+                            autocomplete="off" required id="password" placeholder="Enter Password">
+                    </div>
+                </div>
+
+                <div class="form-group-reg">
+                    <label class="reg-lebel" for="password">Confirm Password:</label>
+                    <div class="input-icons">
+                        <i class="bi bi-key icon"></i>
+                        <span> <input type="password" class="form-control-reg" name="con-password"
+                                id="txtConfirmPassword" maxlength="30" placeholder="Confirm Password">
+                        </span>
+                    </div>
+                </div>
+                <!-- <br>
+                <input type="checkbox" required> Agree the terms & conditions -->
+                <div class="form-group-button-reg">
+                    <br>
+                    <input type="submit" class="btn-btn" id="btnSubmit" value="Register" onClick="validate()">
+                </form>
+            </div>
+        </div>
+        <a href="{{url_for('login')}}" class="btn btn-primary btn-block reg-form" id="back-login"><button class="btn-btn2">have an Account login here</button></a>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+    <!-- <script>
+        var images = ["static/back-image/bg4.jpg", "static/back-image/gym1.jpg", "static/back-image/gym2.jpg", "static/back-image/sub.jpg"];
+        var i = 0;
+        var renew = setInterval(function () {
+            if (images.length == i) {
+                i = 0;
+            }
+            else {
+                document.getElementById("pic").style.backgroundImage = "url(" + images[i] + ")";
+                ++i;
+            }
+        }, 7000);
+    </script> -->
+</body>
+
+</html>

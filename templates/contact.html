@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+{% block title %} Contact Us {% endblock title %}
+{% block body %}
+
+<body class="body-contact" style="background-image:url('https://source.unsplash.com/1600x1300/?communication');">
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="contain">
+
+    <div class="wrapper">
+
+      <div class="form">
+        <h4>GET IN TOUCH</h4>
+        <h2 class="form-headline">Send us a message</h2>
+        <br>
+        <form id="submit-form" method="POST" action="/contact" class="contact-form">
+          <p class="elem">
+            <input id="name" class="form-input" type="text" name="name" placeholder="Your Name*" required>
+            <small class="name-error"></small>
+          </p>
+          <p class="elem">
+            <input id="email" class="form-input" type="email" name="email" style="text-transform: none;" placeholder="Your Email*" required>
+            <small class="email-error"></small>
+          </p>
+          <p class="elem full-width">
+            <input id="company-name" class="form-input" type="number" name="number" placeholder="Mobile Number*" required>
+            <small></small>
+          </p>
+          <p class="elem full-width">
+            <textarea minlength="20" id="message" cols="30" rows="7" name="msg" style="text-transform: none;"  placeholder="Your Message*" required></textarea>
+            <small></small>
+          </p>
+          <p class="full-width">
+            <input type="checkbox" id="checkbox" name="checkbox" checked required><span
+              style="color: white; text-shadow: 1.2px 1.2px black;"> Yes, I would like to receive communications by call
+              /email about Company's services.</span>
+          </p>
+
+          <div class="d-grid gap-4">
+            <input type="submit" class="btn btn-success" value="Submit" onclick="checkValidations()">
+            <input class="btn btn-danger" type="reset" value="Reset">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="contacts contact-wrapper">
+
+        <ul>
+          <li class="text-form">Hey! Thank You For Reaching Us <br><span class="highlight-text-grey">Shortly We'll Contact You.</span> <br> Ready to know how we can help you?</li>
+          <span class="hightlight-contact-info">
+            <li class="email-info">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill ic-ho" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+              </svg>
+              fitness.buddy2.k22@gmail.com
+            </li>
+            <li class="email-info">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone-fill ic-ho" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg>
+              +91 9123353984
+            </li>
+            <li class="email-info">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone-fill ic-ho" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg>
+              +91 6290280241
+            </li>
+          </span>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    const nameEl = document.querySelector("#name");
+    const emailEl = document.querySelector("#email");
+    const companyNameEl = document.querySelector("#company-name");
+    const messageEl = document.querySelector("#message");
+
+    const form = document.querySelector("#submit-form");
+
+    function checkValidations() {
+      let letters = /^[a-zA-Z\s]*$/;
+      const name = nameEl.value.trim();
+      const email = emailEl.value.trim();
+      const companyName = companyNameEl.value.trim();
+      const message = messageEl.value.trim();
+      if (name === "") {
+        document.querySelector(".name-error").classList.add("error");
+        document.querySelector(".name-error").innerText =
+          "Please fill out this field!";
+      } else {
+        if (!letters.test(name)) {
+          document.querySelector(".name-error").classList.add("error");
+          document.querySelector(".name-error").innerText =
+            "Please enter only characters!";
+        } else {
+
+        }
+      }
+      if (email === "") {
+        document.querySelector(".email-error").classList.add("error");
+        document.querySelector(".email-error").innerText =
+          "Please fill out this field!";
+      } else {
+        if (!letters.test(name)) {
+          document.querySelector(".name-error").classList.add("error");
+          document.querySelector(".name-error").innerText =
+            "Please enter only characters!";
+        } else {
+
+        }
+      }
+    }
+
+    function reset() {
+      nameEl = "";
+      emailEl = "";
+      companyNameEl = "";
+      messageEl = "";
+      document.querySelector(".name-error").innerText = "";
+    }
+  </script>
+</body>
+
+
+
+<br>
+<br>
+{% endblock body %}

@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% block title %} Macro Breakdown {% endblock title %}
+{% block body %}
+
+<body class="macro-body" style="background-color: rgb(255, 245, 183);">
+
+  <div class="cals" style="position: sticky;">
+    <h2 class="macro-h2">You have to consume <b>{{cals}}</b> calories per day</h2>
+  </div>
+  <div class="image-flex-macro">
+
+    <span class="image-padding-macro">
+      <figcaption class="right-macro heading"> <span> Protein: </span>{{pros}}g</figcaption>
+      <div class="line"></div>
+      <!-- <hr style="background-color: rgb(0, 0, 0);"> -->
+      <br>
+      <img class="img-macro" src="https://source.unsplash.com/1600x1000/?protein-foods" width="300px" height="180px">
+      <!-- src="https://source.unsplash.com/1600x1000/?protein-foods" -->
+      <br>
+      <br><br>
+      <figcaption class="right-macro">
+        Examples
+        <br><br>
+        <li class="li-macro">Steak: 40-4g protein /8 oz</li>
+        <li class="li-macro">Chicken: 35g protein /4 oz</li>
+        <li class="li-macro">Salmon: 30g protein /5 oz</li>
+        <li class="li-macro">Egg: 6g protein /egg</li>
+      </figcaption>
+    </span>
+
+    <span class="image-padding-macro">
+      <figcaption class="right-macro heading"><span>Carbs:</span> {{carbs}}g</figcaption>
+      <div class="line"></div>
+      <br>
+      <img class="img-macro" src="https://source.unsplash.com/1600x1000/?carbohydrates-foods" width="300px"
+        height="180px">
+      <!-- https://source.unsplash.com/1600x1000/?carbohydrates-foods -->
+      <br>
+      <br><br>
+      <figcaption class="right-macro">
+        Examples
+        <br><br>
+        <li class="li-macro">W-Wheat Bread: 12g carbs /slice</li>
+        <li class="li-macro">Banana: 27g protein /banana</li>
+        <li class="li-macro">Pasta: 35g carbs /5 oz</li>
+        <li class="li-macro">Mixed Nuts 28g carbs /cup</li>
+      </figcaption>
+    </span>
+    <span class="image-padding-macro">
+      <figcaption class="right-macro heading"><span>Fat:</span> {{fats}}g</figcaption>
+      <div class="line"></div>
+      <br>
+      <img class="img-macro" src="https://source.unsplash.com/1600x1000/?sweets-chocolates" width="300px"
+        height="180px"> <br>
+      <!-- https://source.unsplash.com/1600x1000/?sweets-chocolates -->
+      <br><br>
+      <figcaption class="right-macro">
+        Examples
+        <br><br>
+        <li class="li-macro">Avocado: 29g fat / avocado</li>
+        <li class="li-macro">Cashews: 12g fat /oz</li>
+        <li class="li-macro">Cheddar Cheese: 37g fat / cup</li>
+        <li class="li-macro">Dark Chocolate: 9g carbs / oz</li>
+      </figcaption>
+    </span>
+  </div>
+
+  <div style="display: flex; flex-direction: row; justify-content:center; margin-bottom: 40px; ">
+
+    <a style="text-decoration: none ;" href="/dashboard"> <button type="button" class="btn btn-danger mac-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+        </svg>
+        Go Back To Dashboard</button></a>
+    <div style="margin-left: 20px;">
+      <a style="text-decoration: none ;" href="/logs"> <button type="button" class="btn btn-success mac-button">Go To Next Page
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+          </svg>
+        </button></a>
+    </div>
+  </div>
+</body>
+{% endblock body %}

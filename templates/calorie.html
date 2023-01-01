@@ -1,0 +1,258 @@
+{% extends 'layout.html' %}
+{% block title %} Calorie Calculators {% endblock title %} 
+{% block body %}
+
+<body class="body-cal">
+  <style>
+    .body-cal {
+      background-image: url('https://source.unsplash.com/1600x900/?nutrients');
+    }
+    .gen-cal {
+      margin-top: 50px;
+    }
+
+    .activity-cal,
+    .height-cal,
+    .weight-cal,
+    .age-cal,
+    .gen-cal {
+      margin-bottom: 30px;
+    }
+
+ 
+    .form-cal {
+    /* background-color: #42378f; */
+    /* background-image: linear-gradient(315deg, #42378f 14%, #f53844 80%); */
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    width: 35%;
+    zoom: 90%;
+    border-radius: 50px;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+
+  }
+
+  .select-cal {
+    width: 300px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1.5px solid rgb(23, 7, 7);
+    outline: none;
+    display: flex;
+    border-radius: 10px;
+    text-align: center;
+    
+  }
+
+
+#button{
+  width: 300px;
+}
+
+
+  .option-cal {
+    padding: 50px;
+    zoom: 110%;
+    background-color: rgba(68, 68, 68, 0.502);
+    /* backdrop-filter: blur(10px); */
+   
+  }
+
+  .dash-cal-h3 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    margin-top: -40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow:1.5px 1.5px black;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding-bottom: 20px;
+  }
+
+  .input-cal {
+    width: 300px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1.5px solid rgb(23, 7, 7);
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+
+
+  @media(max-width:1100px) {
+    .body-cal {
+      zoom: 90%;
+    }
+
+    .input-cal {
+      zoom: 90%;
+    }
+
+    .select-cal {
+      zoom: 90%;
+    }
+  }
+
+  @media(max-width:930px) {
+
+    .input-cal {
+      width: 300px;
+      zoom: 80%;
+    }
+
+    .select-cal {
+      width: 300px;
+      zoom: 80%;
+    }
+
+    .form-cal {
+      width: 40%;
+    }
+
+  }
+
+
+  @media(max-width:830px) {
+    .form-cal {
+      width: 45%;
+    }
+
+  }
+
+
+  @media(max-width:730px) {
+
+    .input-cal {
+      width: 280px;
+      zoom: 80%;
+    }
+
+    .select-cal {
+      width: 280px;
+      zoom: 80%;
+    }
+
+    .form-cal {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
+  @media(max-width:660px) {
+    .form-cal {
+      width: 50%;
+    }
+
+    .input-cal {
+      width: 290px;
+      zoom: 80%;
+      
+    }
+
+    .select-cal {
+      width: 290px;
+      zoom: 80%;
+    }
+  }
+
+  @media(max-width:560px) {
+    .form-cal {
+      width: 60%;
+    }
+  }
+
+
+  @media(max-width:500px) {
+    .form-cal {
+      width: 60%;
+      zoom: 80%;
+    }
+  }
+
+
+  @media(max-width:440px) {
+    .form-cal {
+      width: 75%;
+      zoom: 80%;
+    }
+  }
+
+
+
+  @media(max-width:370px) {
+    .form-cal {
+      width: 75%;
+      zoom: 70%;
+    }
+  }
+
+
+  @media(max-width:320px) {
+    .form-cal {
+      width: 80%;
+      zoom: 80%;
+    }
+
+    .input-cal {
+      zoom: 70%;
+    }
+
+    .select-cal {
+      zoom: 70%;
+    }
+  }
+  </style>
+  
+  <div class="style">
+    <br>
+
+    <center>
+
+      <form action="/calorie" method="post" class="form-cal">
+        <br>
+        <div class="gen-cal">
+          <h3 class="dash-cal-h3">Calorie calculator</h3>
+          <select name="gender" id="plan" required class="select-cal">
+            <option value="none" selected disabled hidden>Select Your Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="age-cal">
+          <input type="number" name="age" id="age" placeholder="Enter Your Age" min="2" required class="input-cal">
+        </div>
+        <div class="weight-cal">
+          <input type="number" name="weight" id="weight" placeholder="Your Weight (in kg)" min="2" required class="input-cal">
+        </div>
+        <div class="height-cal">
+          <input type="number" name="height" id="height" placeholder="Your Height (in cm)" min="2" required class="input-cal">
+        </div>
+        <div class="activity-cal">
+          <select name="activity" id="activity" required class="select-cal">
+            <option value="none" selected disabled hidden>Select Your Activity</option>
+            <option value="1.2">No Excercise (nothing 🙂)</option>
+            <option value="1.375">Light Excercise (1-2 days/wk)</option>
+            <option value="1.55">Moderate Exercise (3-5 days/wk)</option>
+            <option value="1.725">Very active (6-7 days/wk)</option>
+            <option value="1.9">Extra active (very active & physical job)</option>
+          </select>
+        </div>
+        <div class="form-group-cal">
+          <button type="submit" class="btn btn-primary" id="button">SUBMIT</button>
+        </div>
+        <br><br>
+      </form>
+    </center>
+    <br>
+    <br>
+  </div>
+</body>
+{% endblock body %}

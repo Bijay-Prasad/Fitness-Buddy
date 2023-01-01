@@ -1,0 +1,319 @@
+{% extends 'layout.html' %}
+{% block title %} BMI Calculators {% endblock title %} 
+{% block body %}
+
+<div style="padding-left:16px">
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<body class="bmi-body">
+  <div class="kkl-bmi">
+
+    <center>
+      <div class="container-bmi">
+        <pre><B class="caption-bmi"> Calculate BMI </pre> </B>
+
+
+        <div class="body-bmi">
+
+          <form id="bmi-form">
+<!-- <h5>Metric</h5> -->
+
+            <div class="from-control1-bmi" >
+              <input type="radio" id="bmi-metric" class="from-control-bmi" name="bmi-measure" onchange="measureBMI()"
+              checked /> Metric
+            </div>
+
+            <br>
+            <div class="from-group-bmi">
+              Weight (Kg):
+
+              <span class="unit-area-bmi"> <input id="bmi-weight" class="from-control-bmi" type="number" min="1"
+                  max="635" required></span>
+            </div>
+
+            <div class="from-group-bmi">Height (Cm):
+              <span class="unit-area-bmi"><input id="bmi-height" class="from-control-bmi" type="number" min="54"
+                  max="272" required></span>
+            </div>
+
+          </div>
+        </form>
+          <div class="bmi-results-div" id="bmi-res" style="display: none;">
+            
+            <span id="bmi-results"></span>
+            
+          </div>
+          <br>
+          <input type="submit" class="button-bmi" id="show" value="Calculate" onclick="calcBMI()";>
+          
+        </div>
+      
+    </div>
+  </center>
+  </div>
+
+  <br>
+  <div class="alpha">
+    <div class="container-food">
+      <div class="row text-center">
+        <div class="Feeling-hungry" style="margin-top:50px ; margin-bottom:20px;">
+          <center>
+            <h2>Feeling hungry?</h2>
+          </center>
+        </div>
+        <br><br>
+        <h4>Get a random meal by clicking below</h4>
+        <br>
+        <center><button class="button-primary" id="get_meal">Food Suggestions 🍔</button></center>
+        <br>
+      </div>
+      <div id="meal" class="row meal"></div>
+      <script>
+
+
+        const get_meal_btn = document.getElementById('get_meal');
+        const meal_container = document.getElementById('meal');
+
+        get_meal_btn.addEventListener('click', () => {
+          fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+            .then(res => res.json())
+            .then(res => {
+              createMeal(res.meals[0]);
+            });
+        });
+
+        const createMeal = (meal) => {
+          const ingredients = [];
+          // Get all ingredients from the object. Up to 20
+          for (let i = 1; i <= 20; i++) {
+            if (meal[`strIngredient${i}`]) {
+              ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`)
+            } else {
+              // Stop if no more ingredients
+              break;
+            }
+          }
+
+          const newInnerHTML = `
+      <div class="row">
+        <center<div class="columns five">
+       <br>
+       <br>
+         <center> <img class="food-img" src="${meal.strMealThumb}" alt="Meal Image"></center>
+        
+       <br>
+       <br>
+       <br>
+          ${meal.strCategory ? `<p class="p"> <strong>Category:</strong> ${meal.strCategory}</p>` : ''}
+          ${meal.strArea ? `<p class="p"><strong>Area:</strong> ${meal.strArea}</p>` : ''}
+          ${meal.strTags ? `<p class="p"><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>` : ''}
+          <h3 class="p">Ingredients:</h3>
+         <ul class="p-ul">
+            ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="columns seven">
+          <h3 class="p">${meal.strMeal}</h3>
+          <p class="left">${meal.strInstructions}</p>
+        </div>
+      </div>
+      ${meal.strYoutube ? `
+      <div class="row">
+          <center>
+          <br>
+        <h1>Video Recipe</h1></center>
+    
+        <div class="videoWrapper">
+        
+  <center>
+    <br>
+
+           <iframe width="1000px" height="500px" class="youtube-bmi"
+          src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
+          </iframe> </center>
+  
+        </div>
+     </div>
+      </div>` : ''}
+    `;
+
+          meal_container.innerHTML = newInnerHTML;
+        }
+
+      </script>
+      <script>
+        $(document).ready(function (e) {
+            $("#show").click(function(){
+              $(".bmi-results-div").show();
+            });
+        });
+      </script>
+    </div>
+
+
+    <a href="/contact"><button class="floating-btn">
+        Contact Us
+      </button>
+    </a>
+  </div>
+</body>
+<article class="content-bmi">
+
+  <h1>What is the body mass index?</h1>
+
+  <p class="bmi-p">The BMI is an attempt to quantify the amount of tissue mass (muscle, fat, and bone) in an individual
+    and the categorize that person as underweight, normal weight, overweight or obese based on that value.
+    BMI is a screening tool that can indicate whether a person is underweight or if they have a healthy weight, excess
+    weight, or obesity. If a person's BMI is outside of the healthy range, their health risks may increase
+    significantly.
+    The body mass index is universally expressed in kg/m2, resulting from mass in kilograms and height in meters. The
+    formula is stated as weight of the individual in kilograms divided by the height2 of the individual in meters.
+    When using imperial units, the formula is: BMI = lbs x 703/in2<br><br>
+
+    <center><img class="responsive-bmi" src="{{ url_for('static', filename='back-image/bmi-meter.png') }}" width="500px" height="300px"></center>
+
+
+
+    <!-- 
+ <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti labore aut pariatur corporis obcaecati 
+   quis architecto minus distinctio soluta? Quam praesentium ad, 
+   sit quidem ab fugiat labore necessitatibus non tempore!</p> -->
+
+    <center>
+      <br><br>
+      <br>
+
+
+
+
+      <img class="responsive-bmi"
+        src="/static/back-image/chart.png"
+        width="900px" height="600px" alt="body mass index graph" />
+    </center>
+    <br>
+  <h1>Categories of BMI values</h1>
+
+  <p class="bmi-p">A BMI of less than 18.5 indicates that you are underweight, so you may need to put on some weight.
+    You are recommended to ask your doctor or a dietitian for advice.
+
+    A BMI of 18.5-24.9 indicates that you are at a healthy weight for your height. By maintaining a healthy weight, you
+    lower your risk of developing serious health problems.
+
+    A BMI of 25-29.9 indicates that you are slightly overweight. You may be advised to lose some weight for health
+    reasons. You are recommended to talk to your doctor or a dietitian for advice.
+
+    A BMI of over 30 indicates that you are heavily overweight. Your health may be at risk if you do not lose weight.
+    You are recommended to talk to your doctor or a dietitian for advice.</p>
+  <br>
+  <br>
+
+
+  <h1>How Accurate Is BMI?</h1>
+
+  <p class="bmi-p">Body Mass Index (BMI) is a measure that has been used for over a century to determine whether a
+    person is overweight or not.
+    It is based on a simple formula invented in 1870 by a Belgian scientist, which divides a person’s weight by their
+    height squared.
+    In 2013, Nick Trefethen an Oxford University mathematician called out that this formula is flawed as the height
+    value divides the weight by too much for short people,
+    and too little for tall people. As he puts it “so short people are misled into thinking they are thinner than they
+    are, and tall people are misled into thinking they are fatter than
+    they are.” He came up with a new formula for BMI (1.3 x weight/height2.5) which scales more accurately with height.
+    However, Trefethen acknowledges that BMI is not a perfect measurement.
+    The limitations of this tool are that it does not take into individual factors such as bone size, body frame, muscle
+    fat or abdominal fat. It should therefore not be taken as a final evaluation of your health.
+    BMI is misleading in the case of athletes, body builders, children and the elderly. Additionally men generally are
+    more muscular than women, therefore the BMI for men and women of the same weight and height is not really exactly
+    the same.
+    However,to keep it simple the BMI values for both sexes are taken to be the same. Other tools that can be used in
+    conjunction with the BMI Calculator India are the waist to hip ratio (WHR), ideal body weight calculation,
+    and body fat percentage.
+  </p>
+  <br><br><br>
+  <center><img src="{{ url_for('static', filename='back-image/bmi-scale.jpg') }}" height="300px" width="600px" class="responsive-bmi"></center>
+  <br><br>
+  <h1>The BMI values for children</h1>
+
+  <p class="bmi-p">However, measuring BMI in children and teens is slightly different. Girls and boys develop at
+    different rates and have different amounts of body fat at different ages. For this reason, BMI measurements during
+    childhood and adolescence take age and sex into consideration.<br><br>
+    It is calculated in the same way as for adults, but then compared to typical values for other children of the same
+    age. Instead of comparison against fixed thresholds for underweight and overweight, the BMI is compared against the
+    percentile for children of the same sex and age.<br><br>
+    A BMI that is less than the 5th percentile is considered underweight and above the 95th percentile is considered
+    obese. Children with a BMI between the 85th and 95th percentile are considered to be overweight. BMI is used
+    differently for children. It is calculated in the same way as for adults, but then compared to typical values for
+    other children of the same age. Instead of comparison against fixed thresholds for underweight and overweight, the
+    BMI is compared against the percentile for children of the same sex and age.<br><br>
+    A BMI that is less than the 5th percentile is considered underweight and above the 95th percentile is considered
+    obese. Children with a BMI between the 85th and 95th percentile are considered to be overweight.<br><br>
+    Doctors and other health professionals do not categorize children by healthy weight ranges because:
+  <ul>
+    <tab>
+      <li>they change with each month of age</li>
+      <li>male and female body types change at different rates</li>
+      <li>they change as the child grows taller</li>
+  </ul><br><br>
+  Doctors calculate BMI for children and teens in the same way as they do for adults, by measuring height and weight.
+  Then they locate the BMI number and person's age on a sex-specific BMI-for-age chart. This will indicate whether the
+  child is within a healthy range.
+  </p>
+  <br>
+  <h1>BMI chart for girls</h1>
+  <br><br>
+  <center><img class="responsive-bmi" src="{{ url_for('static', filename='back-image/girls.jpg') }}" width="950px" height="1000px" alt="bmi chart for girls"
+      style="zoom: 95%;padding: 30px"></center> <br>
+  <br><br><br>
+
+  <h1>BMI chart for boys</h1>
+  <br><br>
+  <center><img class="responsive-bmi" src="{{ url_for('static', filename='back-image/boys-bmi.jpg') }}" width="950px" height="1000px"
+      alt="bmi chart for boys" style="padding: 30px;zoom: 95%;"></center>
+  <br>
+  <br>
+  <h1>The Body Mass Index Chart & Obesity In India</h1>
+  <p class="bmi-p">The international threshold for defining a person as overweight is a BMI of 25. So, if a person has a
+    BMI greater than 25,
+    he or she is considered overweight. However, the Indian Ministry of Health, has adjusted this value to 23 in
+    accordance with WHO
+    guidelines. Therefore for an Indian man or women, a BMI over 23 is classed as being overweight. An interesting fact
+    is that Indians
+    have a genetic tendency to abdominal obesity, therefore are at higher risk of heart disease and type 2 diabetes. It
+    has also been
+    observed that there are a greater number of Indian women who are obese compared to Indian men (in 2014 there were 20
+    million obese
+    women in India, and 9.8 million obese men).</p>
+
+  <div class="extra-bmi">
+    <center>
+      <video width="280" height="230" muted autoplay preload="metadata" style="padding: 7px;">
+        <source src="{{ url_for('static', filename='back-image/1.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+     
+      <video width="280" height="230" muted autoplay preload="metadata" style="padding: 7px;">
+        <source src="{{ url_for('static', filename='back-image/2.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video width="280" height="230" muted autoplay preload="metadata" style="padding: 7px;">
+        <source src="{{ url_for('static', filename='back-image/3.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video width="280" height="230" muted autoplay preload="metadata" style="padding: 7px;">
+        <source src="{{ url_for('static', filename='back-image/4.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </center>
+  </div>
+  </p>
+</article>
+</div>
+{% endblock body %}

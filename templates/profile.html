@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block title %} Profile {% endblock title %}
+{% block body %}
+
+<body class="profile-body">
+
+  <div class="container my-3">
+    <h2 class="profile-heading">{{profile.username}}'s Profile</h2>
+    <hr><br>
+    <form action="/profile" method="POST" class="profile-form">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+          </svg>
+        </span>
+        <span class="input-group-text" id="basic-addon1">Full Name</span>
+        <input type="text" class="form-control" aria-label="Username" name="name" aria-describedby="basic-addon1" value="{{profile.name}}">
+      </div>
+
+      <div class="input-group  mb-3">
+        <span class="input-group-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg>
+        </span>
+        <span class="input-group-text">Username</span>
+        <input type="text" aria-label="First name" name="username" class="form-control" required value="{{profile.username}}">
+      </div>
+
+      <div class="input-group  mb-3">
+        <span class="input-group-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+            <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </span>
+        <span class="input-group-text">Password</span>
+        <input type="text" aria-label="First name" name="password" class="form-control" required value="{{profile.password}}">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+          </svg>
+        </span>
+        <span class="input-group-text" id="basic-addon1">Gmail</span>
+        <input type="email" class="form-control" aria-label="Username" name="gmail" aria-describedby="basic-addon1" required value="{{profile.gmail}}">
+      </div>
+
+      <div class="input-group  mb-3">
+        <span class="input-group-text">Age</span>
+        <input type="text" aria-label="First name" name="age" class="form-control" required value="{{profile.age}}">
+        <span class="input-group-text">Gender</span>
+        <input type="text" aria-label="Last name" name="gender" class="form-control" disabled value="{{profile.gender}}">
+      </div>
+      
+      <div class="input-group  mb-3">
+        <span class="input-group-text">Height (cm)</span>
+        <input type="text" aria-label="Last name" name="height" class="form-control" required value="{{profile.height}}">
+        <span class="input-group-text">Weight (kg)</span>
+        <input type="text" aria-label="Last name" name="weight" class="form-control" required value="{{profile.weight}}">
+      </div>
+
+      <div class="input-group  mb-3">
+        <span class="input-group-text">Calories(c)</span>
+        <input type="text" aria-label="Last name" name="calorie" class="form-control" disabled value="{{profile.calorie}}">
+        <span class="input-group-text">Proteins(g)</span>
+        <input type="text" aria-label="Last name" name="protein" class="form-control" disabled value="{{profile.protein}}">
+      </div>
+
+      <div class="input-group  mb-3">
+        <span class="input-group-text">Fats(g)</span>
+        <input type="text" aria-label="Last name" name="fat" class="form-control" disabled value="{{profile.fat}}">
+        <span class="input-group-text">Carbs(g)</span>
+        <input type="text" aria-label="Last name" name="carb" class="form-control" disabled value="{{profile.carb}}">
+      </div><br>
+
+      <div class="d-grid" >
+        <input type="submit" class="btn btn-success" value="UPDATE">
+      </div>
+    </form>
+  </div>
+</body>
+{% endblock body %}

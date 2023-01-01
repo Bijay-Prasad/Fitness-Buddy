@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block title %} Dashboard {% endblock title %} 
+{% block body %}
+
+<body class="body-home" style="background-color: #e3dfc0; font-size: 1.1rem;">
+  <div class="btn-grad1 message">
+    <h4 class="item">{{session["username"]}}'s Dashboard.</h4>
+    <h4 class="item">you're welcome {{session["username"]}}.</h4>
+
+  </div>
+  <div class="img"></div>
+  <center>
+    <div style="border-bottom: 3px solid black; width: 250px; display: flex; justify-content: center;">
+      <h2 style="display: flex; justify-content: center; margin-top:20px ;">Welcome! <span>😍</span> <span
+          style="text-transform: capitalize; color: #000000;">{{session["username"]}}</span></h2>
+    </div>
+  </center>
+  </div>
+  <p style="display: flex;justify-content:center;margin-top: 30px;padding-left: 20px;padding-right: 20px;">Thank you
+    for registering for Fitness Buddy! it can be help you to learn about your dietary needs and lead you to a
+    better lifestyle.</p>
+  <p style="display: flex;justify-content: center;padding-left: 20px;padding-right: 20px; margin-bottom: 30px;">Use
+    the navigation bar on the top of the screen to explore Fitness Buddy's features:</p>
+  <div class="dash-li">
+    <ul>
+      <li class="text-li"><b>Calorie Calculator -</b> Use our calculator to determine how many calories you should be
+        eating each day. </li>
+      <li class="text-li"><b>Macro Breakdown -</b> Based on the results, this page will tell you how much protein, fat
+        and carbs will optimize your diet! </li>
+      <li class="text-li"><b>Food Log - </b>Here you can keep track of what you eat each day and see whether or not
+        you matched your nutrition suggestions!</li>
+    </ul>
+  </div>
+
+  <div class="dash-image">
+
+    <img src="{{ url_for('static', filename='back-image/dashboard1.jpg') }}" class="dash-img-below1">
+
+    <img src="{{ url_for('static', filename='back-image/dashboard2.jpg') }}" class="dash-img-below2">
+
+  </div>
+  <div style="display: flex; flex-direction: row; justify-content:center; margin-bottom: 40px; ">
+
+    <a style="text-decoration: none ;" href="/logout"> <button type="button" class="btn btn-danger">
+     
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+    </svg>  Want to Log out?</button></a>
+    <div style="margin-left: 20px;">
+      <a style="text-decoration: none ;" href="/calorie"> <button type="button" class="btn btn-success">
+        Go To Next Page  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+      </svg></button></a>
+    </div>
+  </div>
+</body>
+{% endblock body %}

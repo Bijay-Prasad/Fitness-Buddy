@@ -1,0 +1,183 @@
+{% extends 'layout.html' %}
+{% block title %} Food Views {% endblock title %}
+{% block body %}
+
+<body class="body-main">
+  <div style="padding-left:16px">
+
+  </div>
+
+  <br>
+  <div class="color-main">
+    <div class="s11kl-main">
+      <h2 class="heading1-main">add a new entry to your food logs</h2>
+    </div>
+    <div class="main-main">
+      <form action="/logs" method="POST" autocomplete="off">
+        <!-- <input type="date" class="value2" placeholder="bef" name="newDate" > -->
+        <!-- <input type="date" class="value3"> -->
+        <input type="" list="browser" class="food-main" name="food" id="food" maxlength="20" placeholder="Enter food"
+          required autocomplete="off">
+        <!-- <datalist id="browser">
+          <option value="Chicken"></option>
+          <option value="Mutton"></option>
+          <option value="Pizza"></option>
+          <option value="Egg Roll"></option>
+          <option value="Chicken Roll"></option>
+          <option value="Chowmin"></option>
+          <option value="Rice and Dal"></option>
+          <option value="Biryani"></option>
+          <option value="Fish Curry"></option>
+        </datalist> -->
+        <input type="number" class="value-main" name="protein" placeholder="Protein (g)" min="1" max="999" required>
+        <input type="number" class="value-main" name="fat" placeholder="Fat (g)" min="1" max="999" required>
+        <input type="number" class="value-main" name="carbs" placeholder="Carbs (g)" min="1" max="999" required>
+        <!-- <input type="number" class="value" placeholder="Consumed (g)" min="1" max="999" required> -->
+        <button class="button-main">Add to log</button>
+      </form>
+
+
+    </div>
+
+    <h2 class="heading2-main">pick a date to view your food log from that day</h2>
+
+    <form action="/view" method="POST" autocomplete="off">
+      <input type="date" class="value1-main" name="view" placeholder="dd-mm-yy" autocomplete="off">
+      <button class="view-log-main">view log</button>
+    </form>
+    <br>
+    <br>
+
+    <div class="flex-container-main">
+      <div class="flex-item-left-main">
+        <table class="table-main" id="example">
+          <tr class="tr-main">
+            <th class="th-main"> S.No.</th>
+            <th class="th-main"> Food eaten</th>
+            <th class="th-main"> Protein (g)</th>
+            <th class="th-main"> Fat (g)</th>
+            <th class="th-main"> Carbs (g)</th>
+            <th class="th-main">Calories (c)</th>
+            <th class="th-main">Actions</th>
+          </tr>
+          {% for data in allData %}
+
+          <tr class="tr-main">
+            <td class="main-td">{{loop.index}}</td>
+            <td class="main-td">{{data.food}}</td>
+            <td class="main-td">{{data.protein}}</td>
+            <td class="main-td">{{data.fat}}</td>
+            <td class="main-td">{{data.carbs}}</td>
+            <td class="main-td">{{data.calories}}</td>
+            <td class="main-td">
+              <a href="/update/{{data.sno}}" type="button" class="btn btn-warning btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-pencil-square" viewBox="0 0 16 16">
+                  <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                  <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                </svg>
+
+              </a>
+              <a href="/delete/{{data.sno}}" type="button" class="btn btn-danger btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                  <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                </svg>
+
+              </a>
+            </td>
+          </tr>
+
+          {% endfor %}
+        </table>
+      </div>
+      <div class="flex-item-right-main">
+        <div class="date-main">
+          <p>Date : {{date}}</p>
+
+        </div>
+        <br>
+        <div class="view-set-main" style="color: #{{calcol}};">
+          <p>Calories Eaten : {{allCal}}/{{cals}}</p>
+        </div>
+        <div class="view-set-main" style="color: #{{procol}};">
+          <p> Proteins Eaten : {{allPros}}/{{pros}}g</p>
+        </div>
+        <div class="view-set-main" style="color: #{{fatcol}};">
+          <p> Fats Eaten : {{allFats}}/{{fats}}g</p>
+        </div>
+        <div class="view-set-main" style="color: #{{cabcol}};">
+          <p> Carbs Eaten : {{allCarbs}}/{{carbs}}g</p>
+
+
+
+          <br>
+
+          <p class="lead"> <button id="csv" class="btn btn-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            TO CSV</button> </p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+  <script src="{{url_for('static',filename='js/tableHTMLExport.js')}}"></script>
+  <script>
+    $('#json').on('click', function () {
+      $("#example").tableHTMLExport({ type: 'json', filename: 'Food Log.json' });
+    })
+    $('#csv').on('click', function () {
+      $("#example").tableHTMLExport({ type: 'csv', filename: 'Food Log.csv' });
+    })
+    $('#pdf').on('click', function () {
+      $("#example").tableHTMLExport({ type: 'pdf', filename: 'Food Log.pdf' });
+    })
+
+
+  </script>
+  <script>
+    try {
+      fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+        return true;
+      }).catch(function (e) {
+        var carbonScript = document.createElement("script");
+        carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+        carbonScript.id = "_carbonads_js";
+        document.getElementById("carbon-block").appendChild(carbonScript);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  </script>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+{% endblock body %}
