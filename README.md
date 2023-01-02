@@ -1,4 +1,4 @@
-# Fitness-WebApp
+# Fitness-Buddy
 
 - ### Overview: 
     A Full-Stack Web app where users can store and keep track of their calorie consumption for their body requirement which is calculated based on the user info and also can be accessible any previous data.
